@@ -1,0 +1,73 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+$small: 576px;            // default 600px
+$medium: 720px;           // default 768px
+$medium-wide: $medium;    // default 900px
+$large: 992px;            // default 1024px
+$x-large: 1340px;         // default 1280px
+$max-width: 1600px;       // default $x-large
+
+
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+
+
+//
+// font 크기 재정의 - import 이후 정의해야 함.
+//
+// 위의 breakpoint와 함께 수정되었으며, large에서 글씨를 한 단계 올리지 않은 이유는
+// nav, toc의 넓이가 변경되기 때문에 실제 컨텐츠 공간이 적어지는 부분을 고려했기 때문입니다.
+// 데스크탑에서 x-large 이상일 경우 폰트를 올려 더 크게 표시되도록 하며 이는 기존 값보다
+// 더 넓은 값을 사용하도록 합니다.
+//
+// 원본위치: [remote-theme]/_sass/minimal-mistakes/_reset.scss
+//
+html {
+    font-size: 16px;                    // Default 16px;
+  
+    @include breakpoint($medium) {
+      font-size: 18px;                  // Default 18px;
+    }
+  
+    @include breakpoint($large) {
+      font-size: 18px;                  // Default 20px;
+    }
+  
+    @include breakpoint($x-large) {
+      font-size: 20px;                  // Default 22px;
+    }
+  
+  }
+  
+  
+  //
+  // link underline 제거
+  //
+  // 기본 링크에 underline이 가독성을 떨어트려 제거하였습니다.
+  //
+  // 원본위치: [remote-theme]/_sass/minimal-mistakes/_basee.scss
+  //
+  a {
+    text-decoration: none;                // 추가된 코드입니다.
+  
+    &:focus {
+      @extend %tab-focus;
+    }
+  
+    &:visited {
+      color: $link-color-visited;
+    }
+  
+    &:hover {
+      color: $link-color-hover;
+      outline: 0;
+    }
+  }
+  
