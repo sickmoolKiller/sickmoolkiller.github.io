@@ -108,7 +108,7 @@ author:
   name             : "suwonFarmer"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : ""
-  location         : ""
+  location         : "Republic of Korea"
   email            :
   links:
     - label: "Email"
@@ -292,3 +292,17 @@ defaults:
       share: false
       related: true
       show_date: true
+  # gardening
+  - scope:
+      path: "gardening"
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      show_date: true
+      comments: true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+
