@@ -4,9 +4,9 @@ main:
 #    url: /docs/quick-start-guide/
   - auto_categories: true
 
-# gardening:
-#   - title: 식물 키우기
-#     url: /gardening/
+gardening:
+  - title: 식물 키우기
+    url: /gardening/
 # # rpi4cluster sidebar
 # rpi4cluster:
 #   - title: 라즈베리파이 4 클러스터
